@@ -1,8 +1,11 @@
 FROM alpine
+
 ENV GO /usr/local/go
 ENV PIXLET /pixlet
 ENV PATH "${PATH}:${GO}/bin:${PIXLET}"
-ENV TZ="America/Chicago"
+
+ARG TZ
+ENV TZ=$TZ
 
 #install prereqs
 RUN apk update && \
